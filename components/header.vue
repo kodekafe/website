@@ -1,12 +1,26 @@
 <template>
   <header>
-    <h1>KodeKafe</h1>
+    <div>
+      <div id="logo-svg" class="icon">
+        <Logo />
+      </div>
+      <h1>KODEKAFÉ</h1>
+    </div>
     <nav>
-      <NuxtLink to="/" exact><Octicon icon="home" /> home</NuxtLink>
+      <NuxtLink to="/" exact>Home</NuxtLink>
+      <NuxtLink to="/discord" exact>Discord server</NuxtLink>
+      <NuxtLink to="/#om" exact>Om oss</NuxtLink>
+      <NuxtLink to="/#kontakt" exact>Kontakt</NuxtLink>
     </nav>
     <div id="theme-select" @click="cycleTheme">
-      <fa-icon :icon="themeButtons[activeTheme].icon"></fa-icon>
-      <p>{{ themeButtons[activeTheme].theme }}</p>
+      <Octicon
+        v-for="(theme, index) in themeButtons"
+        v-show="index === activeTheme"
+        :key="theme.theme"
+        :icon="theme.icon"
+        :size="24"
+        class="icon"
+      />
     </div>
   </header>
 </template>
@@ -14,19 +28,17 @@
 <script lang="ts">
 import Vue from 'vue'
 
-import { faLaptop, faSun, faMoon } from '@fortawesome/free-solid-svg-icons'
-
+import Logo from '@/assets/icons/logo.svg?inline'
 import Octicon from '@/components/octicon.vue'
 
 export default Vue.extend({
-  components: { Octicon },
+  components: { Logo, Octicon },
 
   data() {
     return {
       themeButtons: [
-        { icon: faLaptop, theme: 'System' },
-        { icon: faMoon, theme: 'Dark' },
-        { icon: faSun, theme: 'Light' },
+        { icon: 'moon', theme: 'dark' },
+        { icon: 'sun', theme: 'light' },
       ],
       activeTheme: 0,
     }
@@ -39,8 +51,7 @@ export default Vue.extend({
         this.activeTheme++
       }
 
-      this.$colorMode.preference =
-        this.themeButtons[this.activeTheme].theme.toLowerCase()
+      this.$colorMode.preference = this.themeButtons[this.activeTheme].theme
     },
   },
 })
@@ -48,11 +59,11 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .nuxt-link-active {
-  font-style: italic;
   pointer-events: none;
   cursor: default;
   text-decoration: none;
   color: currentColor;
+  font-weight: bold;
 
   &:visited {
     color: currentColor;
@@ -61,16 +72,11 @@ export default Vue.extend({
 
 a {
   text-decoration: none;
-
-  .octicon {
-    vertical-align: middle;
-  }
+  white-space: nowrap;
 
   &:hover {
     text-decoration: underline;
   }
-
-  white-space: nowrap;
 }
 
 header {
@@ -79,6 +85,7 @@ header {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  background-color: $themeColor;
 }
 
 #flex-right {
@@ -101,16 +108,46 @@ header {
   white-space: nowrap;
 }
 
+#logo-svg {
+  max-width: min-content;
+  height: max-content;
+  display: inline-block;
+  vertical-align: middle;
+  & > svg {
+    vertical-align: middle;
+  }
+}
+
+h1 {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+}
+
 :root {
   &.light-mode {
-    #theme-select {
-      background-color: $darkFooterTextColor;
+    header {
+      color: $lightBgColor;
+    }
+    .icon {
+      color: $lightIconColor;
+
+      path {
+        fill: $lightIconColor;
+      }
     }
   }
 
   &.dark-mode {
-    #theme-select {
-      background-color: $lightFooterTextColor;
+    header {
+      color: $darkBgColor;
+    }
+    .icon {
+      color: $darkIconColor;
+      path {
+        fill: $darkIconColor;
+      }
     }
   }
 }

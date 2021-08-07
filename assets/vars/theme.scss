@@ -1,21 +1,19 @@
-// #region Dark theme variables
-$darkBgColor: #1c1c1c;
-$darkTextColor: white;
-$darkFooterTextColor: #d3d3d3;
+$themeColor: #ff5555;
 
-$darkLinkColor: hsl(207, 100%, 70%);
-$darkLinkVisitedColor: hsl(300, 100%, 77%);
+// #region Dark theme variables
+$darkBgColor: #151515;
+$darkPrimaryTextColor: #D4D4D4;
+$darkSecondaryTextColor: #EEEEEE;
+$darkIconColor: #FCFCFC;
 // #endregion
 
 // #region Light theme variables
-$lightBgColor: white;
-$lightTextColor: black;
-$lightFooterTextColor: hsl(0, 0%, 35%);
-
-$lightLinkColor: hsl(207, 100%, 42%);
-$lightLinkVisitedColor: hsl(300, 100%, 41%);
+$lightBgColor: #F6F6F6;
+$lightPrimaryTextColor: black;
+$lightSecondaryTextColor: 595959;
+$lightIconColor: #3C3C3C;
 // #endregion
-$linkActiveColor: #B00B69;
 
-$bodyFont: -apple-system, BlinkMacSystemFont, 'Noto Sans', sans-serif, "Apple Color Emoji",
-  "Segoe UI Emoji", "Segoe UI Symbol";
+$bodyFont: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif,
+  'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+

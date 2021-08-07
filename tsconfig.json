@@ -40,7 +40,7 @@
       "@nuxtjs/style-resources",
       "@nuxtjs/robots",
       "@nuxtjs/color-mode",
-      "nuxt-build-optimisations"
+      "nuxt-build-optimisations",
     ]
   },
   "exclude": ["node_modules", ".nuxt", "dist"]

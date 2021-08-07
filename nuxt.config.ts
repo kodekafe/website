@@ -10,7 +10,7 @@ const config: NuxtConfig = {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: (titleChunk) =>
-      titleChunk !== 'nuxt-website' ? `${titleChunk} | S1LV3R` : 'S1LV3R',
+      titleChunk !== 'nuxt-website' ? `${titleChunk} | KodeKafé` : 'KodeKafé',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -43,7 +43,7 @@ const config: NuxtConfig = {
     '@nuxtjs/netlify-files',
     '@nuxtjs/eslint-module',
     '@nuxtjs/robots',
-    '@aceforth/nuxt-optimized-images',
+    '@nuxtjs/svg',
     '@nuxtjs/fontawesome',
     '@nuxtjs/sitemap', // KEEP THIS AT THE END
   ],
@@ -78,7 +78,7 @@ const config: NuxtConfig = {
   telemetry: false,
 
   sitemap: {
-    hostname: 'https://s1lv3r.codes',
+    hostname: 'https://kodekafe.no',
     exclude: ['/admin/**'],
   },
 
@@ -88,6 +88,7 @@ const config: NuxtConfig = {
 
   optimizedImages: {
     optimizeImages: true,
+    optimizeImagesInDev: true,
   },
 
   colorMode: { fallback: 'dark' },

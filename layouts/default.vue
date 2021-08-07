@@ -38,17 +38,17 @@ body,
 #_template-container {
   font-family: $bodyFont;
 
-  max-width: 800px;
+  width: 100%;
   height: 100%;
-  margin: 0 1rem;
-  padding: 0 8px;
+  margin: 0;
+  padding: 0;
 
   display: grid;
   grid:
     'header' auto
     'main' 1fr
     'footer' auto
-    / minMax(min-content, 800px);
+    / 1fr;
   grid-gap: 1rem;
 }
 
@@ -68,36 +68,12 @@ footer {
 html {
   &.dark-mode {
     background: $darkBgColor;
-    color: $darkTextColor;
-
-    a {
-      color: $darkLinkColor;
-
-      &:visited {
-        color: $darkLinkVisitedColor;
-      }
-    }
+    color: $darkPrimaryTextColor;
   }
 
   &.light-mode {
     background: $lightBgColor;
-    color: $lightTextColor;
-
-    a {
-      color: $lightLinkColor;
-
-      &:visited {
-        color: $lightLinkVisitedColor;
-      }
-    }
+    color: $lightPrimaryTextColor;
   }
-}
-
-a:active {
-  color: $linkActiveColor;
-}
-
-td {
-  padding-right: 1rem;
 }
 </style>

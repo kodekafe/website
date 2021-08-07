@@ -7,30 +7,24 @@
 <script lang="ts">
 import Vue from 'vue'
 
-export default Vue.extend({
-})
+export default Vue.extend({})
 </script>
 
 <style lang="scss" scoped>
+:root {
+  &.dark-mode {
+    footer {
+      color: $darkBgColor;
+    }
+  }
+
+  &.light-mode {
+    color: $lightBgColor;
+  }
+}
+
 footer {
-  @media (prefers-color-scheme: dark) {
-    color: $darkFooterTextColor;
-
-    & > a:visited {
-      color: $darkLinkColor;
-    }
-  }
-
-  @media (prefers-color-scheme: light) {
-    color: $lightFooterTextColor;
-
-    & > a:visited {
-      color: $lightLinkColor;
-    }
-  }
-
-  margin: 1rem 0 1rem 0;
-  padding-bottom: 1rem;
+  margin: 0;
   flex-shrink: 1;
 
   & > a {
@@ -40,5 +34,7 @@ footer {
       vertical-align: baseline;
     }
   }
+
+  background-color: $themeColor;
 }
 </style>
