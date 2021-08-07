@@ -12,11 +12,12 @@ import octicons from '@primer/octicons'
 export default Vue.extend({
   props: {
     icon: { type: String, required: true },
+    size: { type: Number, default: 24 },
   },
 
   data() {
     return {
-      svgpath: octicons[this.icon].toSVG(),
+      svgpath: octicons[this.icon].toSVG({ width: this.size }),
     }
   },
 })
