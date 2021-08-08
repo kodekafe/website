@@ -4,7 +4,7 @@
       <div id="logo-svg" class="icon">
         <Logo />
       </div>
-      <h1>KODEKAFÉ</h1>
+      <h2>KODEKAFÉ</h2>
     </div>
     <nav>
       <NuxtLink to="/" exact>Home</NuxtLink>
@@ -37,8 +37,8 @@ export default Vue.extend({
   data() {
     return {
       themeButtons: [
-        { icon: 'moon', theme: 'dark' },
         { icon: 'sun', theme: 'light' },
+        { icon: 'moon', theme: 'dark' },
       ],
       activeTheme: 0,
     }
@@ -86,6 +86,7 @@ header {
   align-items: center;
   flex-wrap: wrap;
   background-color: $themeColor;
+  padding: 0 10%;
 }
 
 #flex-right {
@@ -118,9 +119,14 @@ header {
   }
 }
 
-h1 {
-  display: inline;
-  margin: 0;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  display: inline-block;
+  margin: 1.20rem 0;
   padding: 0;
   vertical-align: middle;
 }
