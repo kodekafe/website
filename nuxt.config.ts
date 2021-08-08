@@ -29,6 +29,15 @@ const config: NuxtConfig = {
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: false,
 
+  publicRuntimeConfig: {
+    // api key is restricted to kodekafe.no
+    mapsAPIKey:
+      process.env.NODE_ENV === 'production'
+        ? 'AIzaSyDPVPqj_4GVX_PL4uJqMWWtqWUBMllwKa4'
+        : process.env.MAPS_DEV_API_KEY,
+  },
+  privateRuntimeConfig: {},
+
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/typescript
@@ -91,7 +100,7 @@ const config: NuxtConfig = {
     optimizeImagesInDev: true,
   },
 
-  colorMode: { fallback: 'dark' },
+  colorMode: { fallback: 'light' },
 
   generate: {
     fallback: '404.html',
