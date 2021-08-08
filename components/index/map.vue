@@ -42,6 +42,7 @@ export default Vue.extend({
   display: flex;
   flex-direction: column;
   padding: 0;
+  height: 100%;
 }
 
 #map-iframe {
