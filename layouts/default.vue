@@ -58,7 +58,8 @@ header {
 
 main {
   grid-area: main;
-  flex: 1 0 auto;
+  display: flex;
+  align-items: center;
 }
 
 footer {
