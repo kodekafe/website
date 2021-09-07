@@ -9,7 +9,7 @@
     </p>
     <p v-if="next.today">Neste KodeKafé er i dag!</p>
     <p v-else>
-      Neste KodeKafé er på Fredag den
+      Neste KodeKafé er på Fredag
       {{
         next.date.toLocaleDateString('nb-NO', {
           month: 'long',
