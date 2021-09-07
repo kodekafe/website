@@ -8,7 +8,7 @@
     </div>
     <nav>
       <NuxtLink to="/" exact>Home</NuxtLink>
-      <NuxtLink to="/discord" exact>Discord server</NuxtLink>
+      <a href="/discord" exact>Discord server</a>
       <NuxtLink to="/#om" exact>Om oss</NuxtLink>
       <NuxtLink to="/#kontakt" exact>Kontakt</NuxtLink>
     </nav>
@@ -126,7 +126,7 @@ h4,
 h5,
 h6 {
   display: inline-block;
-  margin: 1.20rem 0;
+  margin: 1.2rem 0;
   padding: 0;
   vertical-align: middle;
 }
