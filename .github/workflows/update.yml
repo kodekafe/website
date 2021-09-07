@@ -1,0 +1,15 @@
+name: Update date
+
+on:
+  schedule:
+    - cron: '0 0 8 * *'
+
+jobs:
+  issue:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Webhook
+        uses: joelwmale/webhook-action@master
+        with:
+          url: ${{ secrets.NETLIFY_WEBHOOK_URL }}
