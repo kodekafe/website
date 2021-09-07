@@ -7,7 +7,16 @@
       lokale. Det serveres pizza og snacks, og det er helt gratis! Vi starter kl
       18 og det varer frem til kl. 23.
     </p>
-    <p v-pre>Neste KodeKafé er på Fredag den {{ day }} {{ month }}</p>
+    <p v-if="next.today">Neste KodeKafé er i dag!</p>
+    <p v-else>
+      Neste KodeKafé er på Fredag den
+      {{
+        next.date.toLocaleDateString('nb-NO', {
+          month: 'long',
+          day: 'numeric',
+        })
+      }}
+    </p>
     <a class="join-button" href="/discord">Bli med</a>
   </div>
 </template>
@@ -15,7 +24,44 @@
 <script lang="ts">
 import Vue from 'vue'
 
-export default Vue.extend({})
+function getFirstFridayInMonth(month: Date): Date {
+  const firstInMonth = new Date(month.getFullYear(), month.getMonth(), 1)
+  let temp = 5 - firstInMonth.getDay()
+  if (temp < 0) {
+    temp += 7
+  }
+  firstInMonth.setDate(temp + 1)
+  return firstInMonth
+}
+
+function getFirstKodeKafe(): { date: Date; today: Boolean } {
+  const today = new Date()
+  let firstFriday = getFirstFridayInMonth(today)
+  const status = { date: firstFriday, today: false }
+
+  if (today.getDate() > firstFriday.getDate()) {
+    if (today.getMonth() === 11) {
+      today.setMonth(0)
+      today.setDate(1)
+    } else {
+      today.setMonth(today.getMonth() + 1, 1)
+    }
+    firstFriday = getFirstFridayInMonth(today)
+    status.date = firstFriday
+  } else if (today.getDate() === firstFriday.getDate()) {
+    status.today = true
+    status.date = today
+  }
+  return status
+}
+
+export default Vue.extend({
+  data() {
+    return {
+      next: getFirstKodeKafe(),
+    }
+  },
+})
 </script>
 
 <style lang="scss" scoped>
