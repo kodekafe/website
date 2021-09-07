@@ -4,7 +4,7 @@
       id="map-iframe"
       frameborder="0"
       style="border: 0"
-      :src="`https://www.google.com/maps/embed/v1/place?key=${$config.mapsAPIKey}&q=${address}`"
+      :src="`https://www.google.com/maps/embed/v1/place?key=${$config.mapsAPIKey}&q=${googleMapsQuery}`"
       allowfullscreen
     >
     </iframe>
@@ -17,7 +17,8 @@ import Vue from 'vue'
 export default Vue.extend({
   data() {
     return {
-      address: 'Damsgårdsveien 82, 5058 Bergen',
+      googleMapsQuery: 'Apparat AS',
+      address: "Damsgårdsveien 82, 5058 Bergen"
     }
   },
 })
