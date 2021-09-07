@@ -100,7 +100,7 @@ const config: NuxtConfig = {
     optimizeImagesInDev: true,
   },
 
-  colorMode: { fallback: 'light' },
+  colorMode: { fallback: 'dark', preference: 'dark' },
 
   generate: {
     fallback: '404.html',

@@ -37,8 +37,8 @@ export default Vue.extend({
   data() {
     return {
       themeButtons: [
-        { icon: 'sun', theme: 'light' },
         { icon: 'moon', theme: 'dark' },
+        { icon: 'sun', theme: 'light' },
       ],
       activeTheme: 0,
     }
