@@ -1,6 +1,5 @@
 <template>
   <footer>
-    <Logo id="logo" />
     <div id="links">
       <a
         v-for="link in links"
@@ -19,10 +18,8 @@
 import Vue from 'vue'
 
 import { faDiscord, faGithub } from '@fortawesome/free-brands-svg-icons'
-import Logo from './logo.vue'
 
 export default Vue.extend({
-  components: { Logo },
   data() {
     return {
       links: [
@@ -55,13 +52,9 @@ footer {
   padding: 0 10%;
 }
 
-#logo {
-  display: inline-block;
-}
-
 #links {
   display: inline-block;
-  margin: 0 auto;
+  margin: 1rem auto;
 
   & > * {
     margin: 0.25rem;
