@@ -83,6 +83,11 @@ export default Vue.extend({
 
 .welcome-container {
   width: 50%;
+  min-width: min-content;
+
+  h1 {
+    white-space: nowrap;
+  }
 }
 
 :root {

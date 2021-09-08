@@ -33,6 +33,7 @@ export default Vue.extend({
   flex-direction: row;
   align-content: space-around;
   align-items: center;
+  flex-wrap: wrap;
   height: 80%;
 }
 </style>
