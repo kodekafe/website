@@ -56,4 +56,8 @@ h6 {
     }
   }
 }
+
+div {
+  width: max-content;
+}
 </style>
