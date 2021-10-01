@@ -98,7 +98,6 @@ export default Vue.extend({
 #top {
   display: flex;
   flex-wrap: wrap;
-  min-height: 50vh;
   justify-content: center;
 
   #welcome {
