@@ -41,7 +41,7 @@ h6 {
 }
 
 :root {
-  &.light-mode.icon {
+  &.light-mode .icon {
     color: $lightIconColor;
 
     path {
@@ -49,7 +49,7 @@ h6 {
     }
   }
 
-  &.dark-mode.icon {
+  &.dark-mode .icon {
     color: $darkIconColor;
     path {
       fill: $darkIconColor;
