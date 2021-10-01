@@ -77,4 +77,8 @@ html {
     color: $lightPrimaryTextColor;
   }
 }
+
+* {
+  box-sizing: border-box;
+}
 </style>
