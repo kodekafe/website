@@ -72,6 +72,14 @@ a {
   &:hover {
     text-decoration: underline;
   }
+
+  &:visited, &:active {
+    color: currentColor;
+  }
+
+  &:active {
+    font-style: italic;
+  }
 }
 
 header {
