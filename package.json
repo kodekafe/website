@@ -24,7 +24,7 @@
     "prism-themes": "1.9.0",
     "prismjs": "1.25.0",
     "sass-loader": "10.2.0",
-    "vuelayers": "0.11.36"
+    "vuelayers": "0.11.37"
   },
   "devDependencies": {
     "@babel/eslint-parser": "7.15.8",
