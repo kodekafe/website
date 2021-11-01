@@ -27,7 +27,7 @@
     "vuelayers": "0.11.37"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "7.15.8",
+    "@babel/eslint-parser": "7.16.0",
     "@commitlint/cli": "13.2.1",
     "@commitlint/config-conventional": "13.2.0",
     "@fortawesome/free-brands-svg-icons": "5.15.4",
