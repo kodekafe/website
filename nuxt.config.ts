@@ -5,7 +5,7 @@ const config: NuxtConfig = {
   ssr: true,
 
   server: {
-    host: '0.0.0.0'
+    host: '0.0.0.0',
   },
 
   // Target: https://go.nuxtjs.dev/config-target
@@ -28,7 +28,7 @@ const config: NuxtConfig = {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: ['@/plugins/vue-lazyload.ts'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: false,
@@ -47,6 +47,10 @@ const config: NuxtConfig = {
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
     'nuxt-build-optimisations',
+    // https://pwa.nuxtjs.org/setup/
+    '@nuxtjs/pwa',
+    // https://marquez.co/docs/nuxt-optimized-images
+    '@aceforth/nuxt-optimized-images',
     '@nuxtjs/style-resources',
     '@nuxtjs/color-mode',
     // https://go.nuxtjs.dev/pwa
@@ -56,7 +60,7 @@ const config: NuxtConfig = {
     '@nuxtjs/netlify-files',
     '@nuxtjs/eslint-module',
     '@nuxtjs/robots',
-    '@nuxtjs/svg',
+    // '@nuxtjs/svg',
     '@nuxtjs/fontawesome',
     '@nuxtjs/sitemap', // KEEP THIS AT THE END
   ],
@@ -73,7 +77,7 @@ const config: NuxtConfig = {
     manifest: {
       lang: 'en',
     },
-    workbox: false,
+    workbox: true,
   },
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
@@ -102,6 +106,7 @@ const config: NuxtConfig = {
   optimizedImages: {
     optimizeImages: true,
     optimizeImagesInDev: true,
+    handleImages: ['jpeg', 'png', 'svg', 'webp', 'gif', 'jpg'],
   },
 
   colorMode: { fallback: 'dark', preference: 'dark' },

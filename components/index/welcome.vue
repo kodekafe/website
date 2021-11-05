@@ -9,16 +9,15 @@
     </p>
     <p v-if="next.today">Neste KodeKafé er i dag!</p>
     <p v-else>
-      Neste KodeKafé er
-      <span v-if="!next.today"
-        >på Fredag
-        {{
-          next.date.toLocaleDateString('nb-NO', {
-            month: 'long',
-            day: 'numeric',
-          })
-        }}</span
-      ><span v-else>i dag! Kom og si hei!</span>
+      Neste KodeKafé er <span v-if="next.today">i dag,</span>
+      <span v-else>på</span> Fredag
+      {{
+        next.date.toLocaleDateString('nb-NO', {
+          month: 'long',
+          day: 'numeric',
+        })
+      }}.
+      <span v-if="next.today">Kom og si hei!</span>
     </p>
     <a class="join-button" href="/discord">Bli med</a>
   </div>

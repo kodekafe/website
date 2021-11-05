@@ -1,7 +1,9 @@
 <template>
   <div>
     <div id="logo-svg" class="icon">
-      <Logo />
+      <!-- The SVG is trusted -->
+      <!-- eslint-disable-next-line vue/no-v-html -->
+      <div v-html="require('@/assets/icons/logo.svg?include')"></div>
     </div>
     <h2>KODEKAFÉ</h2>
   </div>
@@ -10,11 +12,7 @@
 <script lang="ts">
 import Vue from 'vue'
 
-import Logo from '@/assets/icons/logo.svg?inline'
-
-export default Vue.extend({
-  components: { Logo },
-})
+export default Vue.extend({})
 </script>
 
 <style lang="scss" scoped>

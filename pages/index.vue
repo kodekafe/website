@@ -37,8 +37,20 @@
             nettsider med kurs, både gratis og ikke.
           </p>
         </div>
-        <img src="@/assets/images/apparat-3.jpg" class="image" />
-        <img src="@/assets/images/apparat-4.jpg" class="image" />
+        <div v-lazy-container="{ selector: 'img' }">
+          <img
+            :data-src="require('@/assets/images/apparat-5.jpg?webp')"
+            :data-loading="require('@/assets/images/apparat-5.jpg?lqip')"
+            class="image"
+          />
+        </div>
+        <div v-lazy-container="{ selector: 'img' }">
+          <img
+            :data-src="require('@/assets/images/apparat-6.jpg?webp')"
+            :data-loading="require('@/assets/images/apparat-6.jpg?lqip')"
+            class="image"
+          />
+        </div>
         <div>
           <p>
             Men så er det noe med å bare være i et miljø med likesinnede. Å
@@ -124,7 +136,7 @@ export default Vue.extend({
     gap: 0px 0px;
     gap: 1rem;
 
-    & > .image {
+    & .image {
       max-width: 100%;
     }
 
@@ -132,5 +144,9 @@ export default Vue.extend({
       max-height: min-content;
     }
   }
+}
+
+img[lazy='loading'] {
+  filter: blur(15px);
 }
 </style>
