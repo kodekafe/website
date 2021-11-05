@@ -39,14 +39,14 @@
         </div>
         <div v-lazy-container="{ selector: 'img' }">
           <img
-            :data-src="require('@/assets/images/apparat-5.jpg?webp')"
+            :data-src="require('@/assets/images/apparat-5.jpg?resize&sizes[]=1080&webp')"
             :data-loading="require('@/assets/images/apparat-5.jpg?lqip')"
             class="image"
           />
         </div>
         <div v-lazy-container="{ selector: 'img' }">
           <img
-            :data-src="require('@/assets/images/apparat-6.jpg?webp')"
+            :data-src="require('@/assets/images/apparat-6.jpg?resize&sizes[]=1080&webp')"
             :data-loading="require('@/assets/images/apparat-6.jpg?lqip')"
             class="image"
           />
