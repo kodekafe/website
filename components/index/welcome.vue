@@ -1,24 +1,25 @@
 <template>
   <div class="welcome-container">
     <h1>Velkommen til KodeKafé!</h1>
-    <p>
+    <p class="subtitle">
       Ønsker du å møte andre som er interessert i koding, data, spill, og mer?
       Første fredag i måneden samles datainteresserte i Bergen på Apparat sitt
       lokale. Det serveres pizza og snacks, og det er helt gratis! Vi starter kl
       18 og det varer frem til kl. 23.
     </p>
-    <p v-if="next.today">Neste KodeKafé er i dag!</p>
-    <p v-else>
-      Neste KodeKafé er <span v-if="next.today">i dag,</span>
-      <span v-else>på</span> Fredag
+    <p class="subtitle">
+      Neste KodeKafé er
+      <span v-if="next.today">i dag,</span>
+      <span v-else>på</span>
+      Fredag
       {{
         next.date.toLocaleDateString('nb-NO', {
           month: 'long',
           day: 'numeric',
         })
       }}.
-      <span v-if="next.today">Kom og si hei!</span>
     </p>
+    <span v-if="next.today">Kom og si hei!</span>
     <a class="join-button" href="/discord">Bli med</a>
   </div>
 </template>
