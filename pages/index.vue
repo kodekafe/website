@@ -21,7 +21,7 @@
         >
       </p>
       <div class="container">
-        <div>
+        <div id="about-text1">
           <p>
             Det er mange barn og tenåringer som er over middels interessert i
             data og programmering, men ofte blir det med å sitte på gutte- eller
@@ -37,21 +37,25 @@
             nettsider med kurs, både gratis og ikke.
           </p>
         </div>
-        <div v-lazy-container="{ selector: 'img' }">
+        <div id="about-image1" v-lazy-container="{ selector: 'img' }">
           <img
-            :data-src="require('@/assets/images/apparat-5.jpg?resize&sizes[]=1080&webp')"
+            :data-src="
+              require('@/assets/images/apparat-5.jpg?resize&sizes[]=1080&webp')
+            "
             :data-loading="require('@/assets/images/apparat-5.jpg?lqip')"
             class="image"
           />
         </div>
-        <div v-lazy-container="{ selector: 'img' }">
+        <div id="about-image2" v-lazy-container="{ selector: 'img' }">
           <img
-            :data-src="require('@/assets/images/apparat-6.jpg?resize&sizes[]=1080&webp')"
+            :data-src="
+              require('@/assets/images/apparat-6.jpg?resize&sizes[]=1080&webp')
+            "
             :data-loading="require('@/assets/images/apparat-6.jpg?lqip')"
             class="image"
           />
         </div>
-        <div>
+        <div id="about-text2">
           <p>
             Men så er det noe med å bare være i et miljø med likesinnede. Å
             finne noen på ca samme alder, med de samme interessene, som man kan
@@ -133,6 +137,23 @@ export default Vue.extend({
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: repeat(2, min-content);
+
+    grid-template-areas:
+      'text1 image1'
+      'image2 text2';
+
+    @media only screen and (max-width: 1000px) {
+      & {
+        grid-template-columns: auto;
+        grid-template-rows: repeat(1, min-content);
+
+        grid-template-areas:
+          'text1'
+          'image1'
+          'text2'
+          'image2';
+      }
+    }
     gap: 0px 0px;
     gap: 1rem;
 
@@ -143,6 +164,21 @@ export default Vue.extend({
     & > * {
       max-height: min-content;
     }
+  }
+}
+
+#about {
+  &-text1 {
+    grid-area: text1;
+  }
+  &-image1 {
+    grid-area: image1;
+  }
+  &-image2 {
+    grid-area: image2;
+  }
+  &-text2 {
+    grid-area: text2;
   }
 }
 
