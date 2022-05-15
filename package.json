@@ -58,7 +58,7 @@
     "imagemin-pngquant": "9.0.2",
     "imagemin-svgo": "9.0.0",
     "markup": "0.0.4",
-    "prettier": "2.6.1",
+    "prettier": "2.6.2",
     "responsive-loader": "2.3.0",
     "sharp": "0.30.3",
     "sqip-loader": "1.0.0",
